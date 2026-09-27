@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#afd7e9" />
+    <meta name="description" content="雨でお困りのあなたに。100%の晴れ女がおひさまを届けます。" />
+    <title>お天気お届けします | TokyoBoy0701</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="TokyoBoy0701 ホーム">
+        <span class="brand-icon" aria-hidden="true">☀<span>☁</span></span>
+        <span>TokyoBoy0701 さん</span>
+      </a>
+      <div class="header-actions">
+        <button class="music-toggle" id="musicToggle" type="button" aria-label="音楽を聴く" aria-expanded="false" aria-controls="musicPanel">
+          <span class="music-note" aria-hidden="true">♫</span><span class="music-label">音楽を聴く</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="siteMenu">
+          <span></span><span></span><span></span><b>+</b>
+        </button>
+      </div>
+      <nav class="site-menu" id="siteMenu" hidden>
+        <a href="#order">おひさまを予約</a>
+        <a href="#musicPanel" id="menuMusicLink">音楽を聴く</a>
+      </nav>
+    </header>
+
+    <main id="top" class="scene">
+      <div class="mobile-illustration" role="img" aria-label="手描きの太陽と、晴れ女のイラスト"></div>
+
+      <section class="order-card" id="order" aria-labelledby="orderTitle">
+        <div class="price" id="orderTitle">￥3,400 <small>（税込）</small></div>
+        <p class="product-copy">雨でお困りのあなたに、100%の晴れ女がおひさまを連れてきます 😍 どんな場所でも…</p>
+
+        <form id="orderForm" novalidate>
+          <button class="cart-button" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h2l2.2 11.2a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L21.7 7H5" fill="currentColor"/><circle cx="9" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/></svg>
+            <span class="button-divider" aria-hidden="true"></span>
+            <span>カートに入れる</span>
+          </button>
+
+          <div class="field-row">
+            <label class="field" for="dateSelect">
+              <span>ご希望日時</span>
+              <select id="dateSelect" name="date" required></select>
+            </label>
+            <label class="field" for="locationInput">
+              <span>晴れにしたい場所</span>
+              <input id="locationInput" name="location" type="text" autocomplete="street-address" required />
+            </label>
+          </div>
+
+          <label class="field nickname-field" for="nicknameInput">
+            <span>ニックネーム <em>※必須</em></span>
+            <input id="nicknameInput" name="nickname" type="text" autocomplete="nickname" required />
+          </label>
+
+          <label class="field reason-field" for="reasonInput">
+            <span>晴れにしたい理由 <em>※必須</em></span>
+            <textarea id="reasonInput" name="reason" rows="2" placeholder="できるだけ詳しくお書きください" required></textarea>
+          </label>
+        </form>
+      </section>
+    </main>
+
+    <aside class="music-panel" id="musicPanel" hidden aria-label="天気の子の音楽">
+      <div class="music-panel-head">
+        <div><strong>愛にできることはまだあるかい</strong><span>RADWIMPS · 天気の子</span></div>
+        <button id="closeMusic" type="button" aria-label="音楽を閉じる">×</button>
+      </div>
+      <div id="musicFrame" class="music-frame"></div>
+      <a href="https://youtu.be/EQ94zflNqn4" target="_blank" rel="noopener noreferrer">YouTube で開く ↗</a>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
