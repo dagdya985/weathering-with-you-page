@@ -8,7 +8,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #fff; color: var(--ink); font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 3px solid #407aa1; outline-offset: 3px; }
@@ -116,6 +116,20 @@ button { cursor: pointer; }
   .order-card { width: calc(100% - 24px); margin-top: -5px; padding: 23px 16px; }
   .field-row { grid-template-columns: 1fr; }
   .product-copy { margin: 18px 0 22px; }
+}
+@media (max-width: 520px) {
+  .site-header { padding-right: 22px; }
+  .mobile-illustration {
+    height: 84vw;
+    background-size: 170% auto;
+    background-position: -26vw -3.7vw;
+  }
+  .mobile-illustration::after { left: 65%; top: 36vw; }
+  .order-card { padding: 20px 16px; }
+  .product-copy { margin: 14px 0 18px; }
+  .cart-button { margin-bottom: 18px; }
+  .field-row { gap: 12px; margin-bottom: 15px; }
+  .nickname-field { margin-bottom: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
